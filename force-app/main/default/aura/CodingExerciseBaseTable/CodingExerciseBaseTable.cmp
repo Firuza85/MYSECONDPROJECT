@@ -1,0 +1,51 @@
+<aura:component controller="CodingExerciseBaseTableController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <!--CHANGE AS NEEDED-->
+    <!--This Component will be on the account page layout: recordId will have the account id in it.-->
+    <aura:attribute name="recordId" type="string" description="holds account id"/>
+    <aura:attribute name="myTableColumns" type="string" description="FOR BUILD 1: holds the table columns from label.My_Table_Columns"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+
+    <div class="slds-p-around_x-small slds-box slds-theme_default">
+        <div class="slds-section slds-is-open" aura:id="codeTestSection">
+            <!--section header-->
+            <h3 class="slds-section__title">
+                <button aria-controls="codeTestId" class="slds-button slds-section__title-action">
+                    <span onclick="{!c.toggleSection}" data-auraId="codeTestSection">
+                        <lightning:icon iconName="utility:switch"
+                                        alternativeText="button icon"
+                                        size="x-small"
+                                        class="slds-section__title-action-icon slds-button__icon_left"/>
+                    </span>
+                    <span class="slds-truncate" title="Example Of Opportunities">Example Of Opportunities</span>
+                </button>
+            </h3>
+            <div class="slds-section__content">
+                <!--TABLE START-->
+                <!--TODO: Change table to display columns (BUILD 1: use custom use label.My_Table_Columns) for all opportunities on the account in stage prospecting.-->
+                <!--Headers can be api field name and should display in the tables thead-->
+                <!--Opportunity values should display in tbody-->
+                <!--HINT FOR BUILD 1: look into lightning:recordViewForm and lightning:outputField along with your aura:iteration-->
+                <table class="slds-table slds-table_bordered slds-table_striped slds-table_fixed-layout records-table" style="border: 1px solid rgb(217, 219, 221);"> 
+                    <thead> 
+                        <tr class="slds-text-title_caps"> 
+                            <th> 
+                                <div class="slds-truncate">Test Column 1</div> 
+                            </th> 
+                        </tr>
+                    </thead> 
+                    <tbody> 
+                        <tr> 
+                            <td class="slds-truncate"> 
+                                <div class="slds-truncate">Test Column Value</div> 
+                            </td> 
+                        </tr>
+                    </tbody> 
+                </table> 
+                <div class="slds-p-top_small">
+                    <lightning:button variant="Neutral" label="New" onclick="{! c.handleNewClick }"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

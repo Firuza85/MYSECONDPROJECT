@@ -1,0 +1,10 @@
+<template>
+    <lightning-card>
+        <lightning-input label="First Number" value=" Enter first Number" onchange={firstNumberHandler}></lightning-input>
+        <lightning-input label="Second Number" value=" Enter second Number" onchange={secondNumberHandler}></lightning-input>
+        <lightning-button label="SUM" onclick={sumHandler}></lightning-button>
+        <lightning-button label="product" onclick={productHandler}></lightning-button>
+        <div>Sum: {sum}</div>
+        <div>Product: {product}</div>
+    </lightning-card>
+</template>
